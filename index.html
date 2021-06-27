@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Simple JS | Calculator</title>
+     <style>
+          body {
+               overflow: hidden;
+          }
+          .cal-container {
+               height: 100vh;
+               width: 100vw;
+               display: grid;
+               place-items: center;
+          }
+
+          form {
+               display: grid;
+               grid-template-columns: 70px 70px 70px 70px;
+               grid-template-rows: repeat(6, 50px);
+               justify-content: center;
+               grid-gap: 8px;
+               padding: 10px;
+               border: 2px solid rgb(226, 226, 226);
+               border-radius: 5px;
+          }
+
+          input:focus {
+               border: 1px solid rgb(204, 204, 204);
+          }
+
+          input {
+               font-size: 25px;
+               border-radius: 5px;
+               border: none;
+               outline: none;
+               cursor: pointer;
+          }
+
+          .display {
+               grid-column: span 4;
+               background: rgb(240, 240, 240);
+               padding: 0 15px;
+          }
+
+          .clear {
+               grid-column: span 2;
+               color: white;
+               background: rgb(197, 197, 197);
+          }
+          .equal {
+               background: rgb(91, 147, 233);
+               color: white;
+          }
+
+          @media (max-width:500px) {
+               form {
+               grid-template-columns: 45px 45px 45px 45px;
+               grid-template-rows: repeat(6, 35px);
+               }
+               
+               input {
+                    font-size: 20px;
+               }
+          }
+     </style>
+</head>
+
+<body>
+     <div class="cal-container">
+          <form action="" name="calBody">
+               <input class="display" type="text" name="calDisplay" readonly>
+
+               <input type="button" value="(" onclick="calBody.calDisplay.value += '(' ">
+               <input type="button" value=")" onclick="calBody.calDisplay.value += ')' ">
+               <input class="clear" type="button" value="Clear" onclick="calBody.calDisplay.value = '' ">
+
+               <input type="button" value="7" onclick="calBody.calDisplay.value += '7' ">
+               <input type="button" value="8" onclick="calBody.calDisplay.value += '8' ">
+               <input type="button" value="9" onclick="calBody.calDisplay.value += '9' ">
+               <input type="button" value="÷" onclick="calBody.calDisplay.value += '/' ">
+
+               <input type="button" value="4" onclick="calBody.calDisplay.value += '4' ">
+               <input type="button" value="5" onclick="calBody.calDisplay.value += '5' ">
+               <input type="button" value="6" onclick="calBody.calDisplay.value += '3' ">
+               <input type="button" value="×" onclick="calBody.calDisplay.value += '*' ">
+
+               <input type="button" value="1" onclick="calBody.calDisplay.value += '1' ">
+               <input type="button" value="2" onclick="calBody.calDisplay.value += '2' ">
+               <input type="button" value="3" onclick="calBody.calDisplay.value += '3' ">
+               <input type="button" value="-" onclick="calBody.calDisplay.value += '-' ">
+
+               <input type="button" value="0" onclick="calBody.calDisplay.value += '0' ">
+               <input type="button" value="." onclick="calBody.calDisplay.value += '.' ">
+               <input type="button" value="=" onclick="calBody.calDisplay.value = eval(calBody.calDisplay.value)" class="equal">
+               <input type="button" value="+" onclick="calBody.calDisplay.value += '+' ">
+
+          </form>
+     </div>
+</body>
+
+</html>
